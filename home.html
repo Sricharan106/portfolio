@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Sricharan | Home</title>
+    </head>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Existing box animation code...
+
+    // Slide-in for leftsection and rightsection
+    const left = document.querySelector('.leftsection');
+    const right = document.querySelector('.rightsection');
+    const sectionObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('leftsection')) {
+                    entry.target.classList.add('slide-in');
+                }
+                if (entry.target.classList.contains('rightsection')) {
+                    entry.target.classList.add('slide-in');
+                }
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    if (left) sectionObserver.observe(left);
+    if (right) sectionObserver.observe(right);
+});
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const boxes = document.querySelectorAll('.upcoming-topics .box');
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const boxIndex = Array.from(boxes).indexOf(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add('animate');
+                }, boxIndex * 200); // 200ms delay between each box
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    boxes.forEach(box => observer.observe(box));
+});
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const steps = document.querySelectorAll('.step');
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    steps.forEach(step => observer.observe(step));
+});
+</script>
+    <body>
+        <header>
+            <nav>
+                <div class="Leftsection"><h1>&#60;/&#62; Sricharan's
+                        <span class="purple">Portfolio</span></h1></div>
+                <div class="Rightsection">
+                    <ul>
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Projects.html">Projects</a></li>
+                        <li><a href="Contact.html">ContactUs</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <div class="leftsection">
+                    Hi, I’m <span class="purple">Sricharan</span>
+                    <div>Exploring &sum;</div>
+                    <span id="element"></span>
+                </div>
+                <div class="rightsection">
+                    <img src="Developer.png" alt>
+                </div>
+            </section>
+            <hr class="line">
+            <section class="section2">
+                <div class="learning-journey">
+                    <h2 class="h2 title">My Learning Journey</h2></div>
+                <div class="tracker">
+                    <div class="section-title"> &rarr; Topics I’m Planning to
+                        Explore <span
+                            style="color: blueviolet;">Next</span>:-</div>
+                    <div class="upcoming-topics">
+                        <div class="box">
+                            <h3>Full Stack Development (MERN Stack)</h3>
+                            <hr>
+                            <p>HTML, CSS & JavaScript</p>
+                            <p>M – MongoDB (Database)</p><p> E – Express.js
+                                (Backend Framework)</p>
+                            <p>R – React.js (Frontend Library)</p><p>N – Node.js
+                                (Runtime Environment)</p>
+                            <p>Full Stack Development is the process of building
+                                both the front-end and back-end of web
+                                applications.</p>
+                            <p>It involves working with databases, server-side
+                                programming, and client-side development.</p>
+                        </div>
+                        <div class="box">
+                            <h3>Data Structures and Algorithms</h3>
+                            <hr>
+                            <p>Understanding data structures like arrays, linked
+                                lists, trees, and graphs.</p>
+                            <p>Learning algorithms for searching, sorting, and
+                                optimization.</p>
+                            <p>Data Structures and Algorithms are essential for
+                                efficient problem-solving in programming.</p>
+                            <p>They help in optimizing code performance and
+                                resource utilization.</p>
+                        </div>
+                        <div class="box">
+                            <h3>App Development<br> &ensp;</h3>
+                            <hr>
+                            <p>Building mobile applications for Android and iOS
+                                platforms.</p>
+                            <p>Using frameworks like React Native or Flutter for
+                                cross-platform development.</p>
+                            <p>App Development involves creating software
+                                applications for mobile devices.</p>
+                            <p>It includes designing user interfaces,
+                                implementing features, and ensuring
+                                performance.</p>
+                            <p>It requires knowledge of programming languages
+                                like Java, Kotlin, or Swift.</p>
+                        </div>
+                        <div class="box">
+                            <h3>AI/ML<br> &ensp;</h3>
+                            <hr>
+                            <p>Exploring Artificial Intelligence (AI) and
+                                Machine Learning (ML) concepts.</p>
+                            <p>Understanding algorithms for data analysis,
+                                pattern recognition, and predictive
+                                modeling.</p>
+                            <p>AI/ML involves creating systems that can learn
+                                from data and make decisions.</p>
+                            <p>It includes techniques like neural networks,
+                                natural language processing, and computer
+                                vision.</p>
+                        </div>
+                    </div>
+                    <div class="section-title"> &rarr; My <span
+                            style="color: blueviolet;">Progress</span> So
+                        Far:-</div>
+                    <div class="progress-line">
+                        <ul class="steps">
+                            <li>
+                                <i class="icons"><img src="CS50 Duck.png"
+                                        alt></i>
+                                <div class="step first">
+                                    <p>1</p>
+                                </div>
+                                <p class="label">CS50</p>
+                            </li>
+                            <li>
+                                <i class="icons"><img src="Full Stack.png"
+                                        alt></i>
+                                <div class="step second">
+                                    <p>2</p>
+                                    <i class="awesome fa-solid fa-check"></i>
+                                </div>
+                                <p class="label">Full Stack</p>
+                            </li>
+                            <li>
+                                <i class="icons"><img src="Java.png" alt></i>
+                                <div class="step third">
+                                    <p>3</p>
+                                    <i class="awesome fa-solid fa-check"></i>
+                                </div>
+                                <p class="label">DSA</p>
+                            </li>
+                            <li>
+                                <i class="icons"><img src="Klotin.png" alt></i>
+                                <div class="step fourth">
+                                    <p>4</p>
+                                    <i class="awesome fa-solid fa-check"></i>
+                                </div>
+                                <p class="label">App DEV</p>
+                            </li>
+                            <li>
+                                <i class="icons"><img src="Python.png" alt></i>
+                                <div class="step fourth">
+                                    <p>4</p>
+                                    <i class="awesome fa-solid fa-check"></i>
+                                </div>
+                                <p class="label">AI/ML</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="footer">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Projects.html">Projects</a></li>
+                    <li><a href="Contact.html">ContactUs</a></li>
+                </ul>
+                <hr>
+                <p>Follow me on </p>
+                <ul>
+                    <li><a href="https://github.com/Sricharan106"><i
+                                class="Logo"><img src="Github.png"
+                                    alt></i>Github</a></li>
+                    <li><a href="https://www.instagram.com/sricharan_106"><i
+                                class="Logos"><img src="Instgram.png"
+                                    alt></i>Instagram</a></li>
+                    <li><a href="https://x.com/ParsiSricharan"><i
+                                class="Logos"><img src="X.png"
+                                    alt></i>X</a></li>
+                    <li><a href="https://www.reddit.com/user/Sricharan_106"><i
+                                class="Logos"><img src="Reddit.png"
+                                    alt></i>Reddit</a></li>
+                    <li><a href="https://anilist.co/user/Sricharan106/"><i
+                                class="Logos"><img
+                                    src="anilist_logo_icon_247617.png"
+                                    alt></i>Anilist</a></li>
+                    <li><a
+                            href="https://myanimelist.net/profile/Sricharan106"><i
+                                class="Logos"><img src="myanimelist.png"
+                                    alt></i>My Anime List</a></li>
+                </ul>
+                <hr>
+                <p>Copyright &copy; 2025 Sricharan | All rights reserved.</p>
+                <p>Logos/images (e.g., GitHub, Instagram, CS50 Duck) are © their respective owners.</p>
+            </section>
+            <script
+                src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+    var typed = new Typed('#element', {
+      strings: ['Coding', 'Full Stack Development', '&amp;Video Editing'],
+      typeSpeed: 50,
+    });
+  </script>
+        </main>
+    </body>
+</html>
